@@ -1,4 +1,5 @@
 import R from 'ramda'
+import tagNames from 'html-tag-names'
 
 export const h = R.curry(
   (type, attrs = {}, children = []) => {
@@ -43,29 +44,7 @@ const makeElementBuilder = type => (...args) => {
   return h(type, ...args)
 }
 
-const elementBuilders = [
-  'p',
-  'span',
-  'strong',
-  'div',
-  'h1',
-  'h2',
-  'h3',
-  'h4',
-  'h5',
-  'h6',
-  'img',
-  'nav',
-  'ol',
-  'li',
-  'a',
-  'header',
-  'footer',
-  'form',
-  'input',
-  'label',
-  'button',
-].reduce((builderMap, tag) => {
+const elementBuilders = tagNames.reduce((builderMap, tag) => {
   builderMap[tag] = makeElementBuilder(tag)
   return builderMap
 }, h)
