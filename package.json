@@ -8,6 +8,7 @@
     "start": "npm run build",
     "clean": "rm -rf dist",
     "precommit": "lint-staged",
+    "prepublish": "npm run build",
     "prettier": "prettier --write --no-semi --single-quote --trailing-comma es5 --print-width 50 src/**/*.js",
     "test": "mocha --opts ./mocha.opts src/*.spec.js"
   },
