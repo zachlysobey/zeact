@@ -2,9 +2,12 @@
   "name": "zeact",
   "version": "1.0.2",
   "description": "stupid-simple front-end web framwork",
-  "main": "dist/bundle.js",
+  "main": "dist/index.js",
+  "jsnext:main": "es/index.js",
   "scripts": {
-    "build": "webpack",
+    "build": "npm run build:commonjs && npm run build:es",
+    "build:commonjs": "BABEL_ENV=commonjs babel src --out-dir dist --ignore '**/*.spec.js'",
+    "build:es": "BABEL_ENV=es babel src --out-dir es --ignore '**/*.spec.js'",
     "start": "npm run build",
     "clean": "rm -rf dist",
     "precommit": "lint-staged",
@@ -25,6 +28,7 @@
     "ramda": "^0.24.1"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
     "babel-preset-env": "^1.6.0",
@@ -32,7 +36,6 @@
     "husky": "^0.14.3",
     "lint-staged": "^4.0.3",
     "mocha": "^3.5.0",
-    "prettier": "^1.5.3",
-    "webpack": "^3.5.4"
+    "prettier": "^1.5.3"
   }
 }

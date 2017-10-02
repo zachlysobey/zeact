@@ -1,13 +1,31 @@
 {
-  "presets": [
-    [
-      "env", {
-        "targets": {
-          "browsers": [
-            "last 2 versions"
-          ]
-        }
-      }
-    ]
-  ]
+  "env": {
+    "commonjs": {
+      "presets": [
+        [
+          "env", {
+            "targets": {
+              "browsers": [
+                "last 2 versions"
+              ]
+            }
+          }
+        ]
+      ]
+    },
+    "es": {
+      "presets": [
+        [
+          "env", {
+            "modules": false,
+            "targets": {
+              "browsers": [
+                "last 2 versions"
+              ]
+            }
+          }
+        ]
+      ]
+    }
+  }
 }
