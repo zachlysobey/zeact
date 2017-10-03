@@ -9,7 +9,7 @@
     "build:commonjs": "BABEL_ENV=commonjs babel src --out-dir dist --ignore '**/*.spec.js'",
     "build:es": "BABEL_ENV=es babel src --out-dir es --ignore '**/*.spec.js'",
     "start": "npm run build",
-    "clean": "rm -rf dist",
+    "clean": "rm -rf dist && rm -rf es",
     "precommit": "lint-staged",
     "prepublish": "npm run build",
     "prettier": "prettier --write --no-semi --single-quote --trailing-comma es5 --print-width 50 src/**/*.js",
