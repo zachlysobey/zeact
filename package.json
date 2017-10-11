@@ -1,6 +1,6 @@
 {
   "name": "zeact",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "stupid-simple front-end web framwork",
   "main": "dist/index.js",
   "jsnext:main": "es/index.js",
